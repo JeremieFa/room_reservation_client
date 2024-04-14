@@ -1,0 +1,32 @@
+
+$primary: #35a7de
+
+@import "bulma/bulma.scss"
+@import "@fortawesome/fontawesome-free/css/all.css"
+@import "./RoomAvailability"
+@import "./QuickReservationPage"
+
+
+.content
+  padding: 20px
+
+@media screen and (max-width: $tablet)
+  .modal-card
+    min-height: 90vh
+
+  .is-fullwidth-mobile, select, button, .select
+    width: 100%
+
+  .buttons
+    flex: 1
+
+
+
+.is-not-clickable-cursor
+  cursor: default
+
+$gap-base: 0.5rem
+
+@for $i from 0 through 8
+  .gap-#{$i}
+    gap: ($gap-base * $i) !important

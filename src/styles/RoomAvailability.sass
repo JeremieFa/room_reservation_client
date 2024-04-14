@@ -1,0 +1,112 @@
+@import "bulma/sass/utilities/initial-variables"
+
+$reserved-color: #a1bfe7
+$available-color: #cfc
+$unavailable-color: #fcc
+$border-color: #ccc
+
+.room-reservations
+  display: flex
+  gap:10px
+  flex-direction: column
+
+.room-reservation
+  display: flex
+  gap:20px
+  @media screen and (max-width: $tablet)
+      flex-direction: column
+
+
+  .room-reservation-line
+    flex: 1
+    display: flex
+
+    &:hover
+      filter: brightness(1.1)
+    @media screen and (max-width: $tablet)
+      flex-direction: column
+
+  .room-name
+    font-weight: bold
+
+  button.hour-slot
+    flex: 1
+    text-align: center
+    border-top: 1px solid $border-color
+    border-bottom: 1px solid $border-color
+    border-right: 1px solid $border-color
+    padding: 5px
+    cursor: pointer
+    position: relative
+
+    &:first-child
+      border-left: 1px solid $border-color
+      border-top-left-radius: 5px
+      border-bottom-left-radius: 5px
+    &:last-child
+      border-top-right-radius: 5px
+      border-bottom-right-radius: 5px
+
+    @media screen and (max-width: $tablet)
+      width: 100%
+      min-height: 40px
+
+      border-top: 0px solid $border-color
+      border-bottom: 1px solid $border-color
+      border-left: 1px solid $border-color
+      border-right: 1px solid $border-color
+
+      &:first-child
+        border-top: 1px solid $border-color
+
+        border-top-left-radius: 5px
+        border-top-right-radius: 5px
+        border-bottom-left-radius: 0
+        border-bottom-right-radius: 0
+      &:last-child
+        border-bottom-left-radius: 5px
+        border-bottom-right-radius: 5px
+        border-top-left-radius: 0
+        border-top-right-radius: 0
+
+    &.available
+      background-color: $available-color
+
+    &.unavailable
+      background-color: $unavailable-color
+
+    &.reserved
+      background-color: $reserved-color
+
+    &.selected , &:hover
+      filter: brightness(0.8)
+
+
+    &::before
+      position: absolute
+      left: 0
+      top: 0
+      content: attr(data-hour)
+      display: block
+      font-size: 0.8em
+      color: #666
+      z-index: 1
+
+    &:disabled
+      cursor: not-allowed
+      &.available
+        //stripes
+        background-image: linear-gradient(45deg, $border-color 25%, transparent 25%, transparent 50%, $border-color 50%, $border-color 75%, transparent 75%, transparent)
+        background-size: 10px 10px
+        background-color: $available-color
+      &.unavailable
+        //stripes
+        background-image: linear-gradient(45deg, $border-color 25%, transparent 25%, transparent 50%, $border-color 50%, $border-color 75%, transparent 75%, transparent)
+        background-size: 10px 10px
+        background-color: $unavailable-color
+      &.reserved
+        //stripes
+        background-image: linear-gradient(45deg, $border-color 25%, transparent 25%, transparent 50%, $border-color 50%, $border-color 75%, transparent 75%, transparent)
+        background-size: 10px 10px
+        background-color: $reserved-color
+
