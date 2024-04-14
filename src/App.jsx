@@ -10,6 +10,7 @@ import "./styles/App.sass";
 import { MainNavBar } from "@/components/MainNavBar";
 import { RoomsAvailabilitiesPage } from "@/pages/RoomsAvailabilitiesPage";
 import { QuickReservationPage } from "@/pages/QuickReservationPage";
+import ErrorPage from "@/pages/404";
 
 function App() {
   return (
@@ -33,6 +34,10 @@ function App() {
             <Route
               path="/rooms-availabilities"
               element={<RoomsAvailabilitiesPage />}
+            />
+            <Route
+              path="*"
+              element={<ErrorPage />}
             />
           </Routes>
         </div>
