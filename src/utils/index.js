@@ -1,5 +1,5 @@
 function getHoursSelectList() {
-  return Array.from({ length: 25 }, (_, i) => {
+  return Array.from({ length: 24 }, (_, i) => {
     return {
       value: i,
       label: i.toString().padStart(2, "0") + ":00",

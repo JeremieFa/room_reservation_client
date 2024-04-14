@@ -27,7 +27,7 @@ export const ReservationModalCreation = () => {
     }
   }, [reservation]);
 
-  const disponibleHours = Array.from({ length: 25 }, (_, i) => {
+  const disponibleHours = Array.from({ length: 24 }, (_, i) => {
     const dateAtHour = new Date(currentDate);
     dateAtHour.setHours(i);
 
