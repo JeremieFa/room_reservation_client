@@ -10,6 +10,10 @@ This is a (really) simple room reservation app. It allows users to reserve rooms
 
 This project uses React with Vite, https://vitejs.dev/guide/
 
+## Requirements
+
+Node.js 20 or higher
+
 ## Usage
 
 To run the project, you need to have Node.js installed. You can then run the following commands:
